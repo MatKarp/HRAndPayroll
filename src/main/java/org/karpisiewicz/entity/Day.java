@@ -1,6 +1,7 @@
 package org.karpisiewicz.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -36,10 +37,8 @@ public class Day implements Serializable {
     @Column(name = "id")
     private Long id;
     
-    @NotNull
     @Column(name = "date")
-    @Temporal(TemporalType.DATE)
-    private Date date;
+    private LocalDate date;
    
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
@@ -52,7 +51,7 @@ public class Day implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "dayId")
     private Collection<WorkTime> workTimeCollection = new ArrayList();
 
-    public Day(Date date, DayType type, Schedule scheduleId) {
+    public Day(LocalDate date, DayType type, Schedule scheduleId) {
         this.date = date;
         this.type = type;
         this.scheduleId = scheduleId;

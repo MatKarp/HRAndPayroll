@@ -1,6 +1,7 @@
 package org.karpisiewicz.form.day;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +17,7 @@ public class DayGetForm implements Serializable{
     
     Long id;
     
-    Date date;
+    LocalDate date;
     
     DayType type;
     
