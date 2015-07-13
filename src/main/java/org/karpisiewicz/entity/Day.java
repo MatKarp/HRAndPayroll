@@ -23,6 +23,7 @@ import javax.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.karpisiewicz.entity.enumerated.DayType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @NoArgsConstructor
@@ -37,6 +38,7 @@ public class Day implements Serializable {
     @Column(name = "id")
     private Long id;
     
+    @NotNull
     @Column(name = "date")
     private LocalDate date;
    
